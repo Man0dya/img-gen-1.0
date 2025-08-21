@@ -1,0 +1,15 @@
+{
+  "name": "img-gen-1.0",
+  "version": "1.0.0",
+  "description": "AI Image Generation Application",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.0",
+    "concurrently": "^8.2.2"
+  }
+}

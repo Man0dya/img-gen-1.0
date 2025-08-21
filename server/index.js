@@ -23,7 +23,15 @@ app.get('/', async(req, res) => {
 const startServer = async() => {
 
     try {
-        connectDB(process.env.MONGODB_URL);    
+        // Try to connect to MongoDB, but don't fail if it's not available
+        try {
+            await connectDB(process.env.MONGODB_URL);
+            console.log('MongoDB connected successfully');
+        } catch (dbError) {
+            console.log('MongoDB connection failed, but server will continue without database functionality');
+            console.log('To enable full features, please start MongoDB or use MongoDB Atlas');
+        }
+        
         app.listen(8080, () => console.log('Server has started on port http://localhost:8080'));
 
     } catch (error) {

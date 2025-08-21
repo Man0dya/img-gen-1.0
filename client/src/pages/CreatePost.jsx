@@ -22,7 +22,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true)
-        const response = fetch('http://localhost:8080/api/v1/dalle', {
+        const response = await fetch('http://localhost:8080/api/v1/imgGen', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -31,8 +31,12 @@ const CreatePost = () => {
         })
 
         const data  = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` })
+        setForm({ ...form, photo: data.photo })
        
       } catch (error) {
         alert('Error generating image. Please try again later.')
@@ -47,10 +51,31 @@ const CreatePost = () => {
     }
   }
 
-  const handleSubmit = ()=> {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    
-    // Handle form submission logic here
+    if (form.prompt && form.photo) {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:8080/api/v1/post', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
+        });
+
+        await response.json();
+        alert('Success!');
+        navigate('/');
+      } catch (error) {
+        alert(error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      alert('Please generate an image with a prompt');
+    }
   }
   const handleChange = (e) => {
 
@@ -131,7 +156,7 @@ const CreatePost = () => {
 
           <button
             type='button'
-            onClick={() => {/* Handle image generation */}}
+            onClick={generateImage}
             className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'>
             {generatingImg ? 'Generating...' : 'Generate'}
           </button>

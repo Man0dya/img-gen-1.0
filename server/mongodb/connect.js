@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
 
-const connectDB =  (url) => {
+const connectDB = async (url) => {
     mongoose.set("strictQuery", true);
 
-    mongoose.connect(url) 
-    .then(() => console.log("MongoDB connected successfully"))
-    .catch((err) => console.error(err));
+    try {
+        await mongoose.connect(url);
+        console.log("MongoDB connected successfully");
+    } catch (err) {
+        console.error("MongoDB connection error:", err);
+        throw err;
+    }
 }
 
 export default connectDB;

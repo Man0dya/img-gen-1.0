@@ -21,3 +21,11 @@
   background-color: #666e75;
   border-radius: 5px;
 }
+
+.shadow-card {
+    box-shadow: 0px 35px 120px -12px #211e35;
+}
+
+.shadow-cardhover {
+    box-shadow: 0px 35px 120px -12px #211e35;
+}
