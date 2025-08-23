@@ -145,3 +145,5 @@ We welcome contributions! Here's how you can help:
 - Built with modern web technologies
 - Powered by AI image generation APIs
 - Community-driven development
+
+---
