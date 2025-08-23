@@ -1,5 +1,7 @@
 # Image Generation App
 
+ ---
+
 A modern web application for generating AI-powered images and sharing them with the community.
 
 ## ✨ Features
