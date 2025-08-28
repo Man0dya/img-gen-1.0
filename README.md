@@ -91,24 +91,6 @@ img-gen-1.0/
 └── package.json          # Root package.json for scripts
 ```
 
-## 🔧 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start both frontend and backend in development mode |
-| `npm run server` | Start only the backend server |
-| `npm run client` | Start only the frontend development server |
-| `npm run install-all` | Install dependencies for all packages |
-
-## 🌐 API Endpoints
-
-### Image Generation
-- `POST /api/v1/imgGen` - Generate image from text prompt
-
-### Posts
-- `GET /api/v1/post` - Retrieve all community posts
-- `POST /api/v1/post` - Create a new community post
-
 ## 🎨 How to Use
 
 1. **Generate Images**
@@ -130,20 +112,3 @@ img-gen-1.0/
    - Use the search functionality to find specific content
    - Filter and sort posts as needed
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 🙏 Acknowledgments
-
-- Built with modern web technologies
-- Powered by AI image generation APIs
-- Community-driven development
-
----
