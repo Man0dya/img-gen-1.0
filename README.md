@@ -1,33 +1,40 @@
-# Image Generation App
+# 🎨 Image Generation App  
+You can try the app here - **[🌐 Live Demo](https://img-gen-image-generator.netlify.app)**  
 
-A modern web application for generating AI-powered images and sharing them with the community.
+A modern web application for generating AI-powered images and sharing them with the community.  
 
-## ✨ Features
+---
 
-- **AI Image Generation**: Create stunning images using advanced AI models
-- **Community Gallery**: Share and discover images created by the community
-- **Smart Prompts**: Get creative inspiration with intelligent prompt suggestions
-- **Search & Filter**: Easily find images by tags, descriptions, or creators
-- **Responsive Design**: Beautiful interface that works on all devices
-- **Real-time Updates**: See new community posts as they're shared
+## ✨ Features  
 
-## 🛠️ Technology Stack
+- 🖌️ **AI Image Generation** – Create stunning images using advanced AI models  
+- 🌍 **Community Gallery** – Share and discover images created by the community  
+- 💡 **Smart Prompts** – Get creative inspiration with intelligent prompt suggestions  
+- 🔎 **Search & Filter** – Easily find images by tags, descriptions, or creators  
+- 📱 **Responsive Design** – Beautiful interface that works on all devices  
+- ⚡ **Real-time Updates** – See new community posts as they’re shared  
 
-### Frontend
-- **React 19** - Modern UI framework
-- **Vite** - Fast build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework
-- **React Router** - Client-side routing
+---
 
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web application framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB object modeling
+## 🛠️ Technology Stack  
 
-### External APIs
-- **AI Image Generation API** - For creating images from text prompts
-- **Cloudinary** - Cloud image storage and optimization
+### **Frontend**  
+- ⚛️ **React 19** – Modern UI framework  
+- ⚡ **Vite** – Fast build tool and dev server  
+- 🎨 **Tailwind CSS** – Utility-first CSS framework  
+- 🛤️ **React Router** – Client-side routing  
+
+### **Backend**  
+- 🟢 **Node.js** – JavaScript runtime  
+- 🚀 **Express.js** – Web application framework  
+- 🍃 **MongoDB** – NoSQL database  
+- 🗂️ **Mongoose** – MongoDB object modeling  
+
+### **External APIs & Services**  
+- 🤖 **AI Image Generation API** – For creating images from text prompts  
+- ☁️ **Cloudinary** – Cloud image storage and optimization  
+
+---
 
 ## 🚀 Getting Started
 
