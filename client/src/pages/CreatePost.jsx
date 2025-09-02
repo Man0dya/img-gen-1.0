@@ -31,9 +31,9 @@ const CreatePost = () => {
         })
 
         const data  = await response.json();
-        
+
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(data.error || `HTTP error! status: ${response.status}`);
         }
 
         setForm({ ...form, photo: data.photo })
