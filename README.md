@@ -49,7 +49,7 @@ A modern web application for generating AI-powered images and sharing them with 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Man0dya/img-gen-1.0.git
    cd img-gen-1.0
    ```
 
