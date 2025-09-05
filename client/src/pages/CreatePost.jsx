@@ -176,9 +176,43 @@ const CreatePost = () => {
             </div>
 
             {form.photo && (
-              <p className="text-sm text-gray-600 mt-4 text-center max-w-xs">
-                Ready to share? Your creation is looking amazing!
-              </p>
+              <div className="mt-4 flex flex-col items-center gap-3">
+                <p className="text-sm text-gray-600 text-center max-w-xs">
+                  Ready to share? Your creation is looking amazing!
+                </p>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      // Fetch the image as blob
+                      const response = await fetch(form.photo);
+                      const blob = await response.blob();
+
+                      // Create download link
+                      const url = window.URL.createObjectURL(blob);
+                      const link = document.createElement('a');
+                      link.href = url;
+                      link.download = `img-gen-1.0-${Date.now()}.jpg`;
+
+                      // Trigger download
+                      document.body.appendChild(link);
+                      link.click();
+
+                      // Cleanup
+                      document.body.removeChild(link);
+                      window.URL.revokeObjectURL(url);
+                    } catch (error) {
+                      console.error('Download failed:', error);
+                      // Fallback to opening in new tab
+                      window.open(form.photo, '_blank');
+                      alert('Download failed. Image opened in new tab instead.');
+                    }
+                  }}
+                  className="bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 text-sm"
+                >
+                  📥 Download Image
+                </button>
+              </div>
             )}
           </div>
         </div>
