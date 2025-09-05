@@ -23,7 +23,7 @@ const Home = () => {
       setLoading(true);
 
       try {
-        const response = await fetch(`${getApiBaseUrl()}/.netlify/functions/posts`, {
+        const response = await fetch(`${getApiBaseUrl()}/api/v1/post`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
