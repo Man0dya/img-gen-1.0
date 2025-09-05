@@ -166,5 +166,3 @@ Contributions are welcome!
 
 ---
 
-✨ **Made with ❤️ for the AI art community**
-
