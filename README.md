@@ -80,76 +80,6 @@ img-gen-1.0/
 └── README.md
 ```
 
----
-
-## 🚀 Deployment to Netlify
-
-### Step 1: Prepare Your Backend
-1. **Deploy Backend Separately** (Heroku, Vercel, or VPS)
-2. **Get Your Backend URL** (e.g., `https://your-backend.herokuapp.com`)
-3. **Ensure CORS is configured** for your frontend domain
-
-### Step 2: Deploy Frontend to Netlify
-
-#### Option A: GitHub Integration (Recommended)
-1. **Push to GitHub**:
-   ```bash
-   git add .
-   git commit -m "Ready for Netlify deployment"
-   git push origin main
-   ```
-
-2. **Connect to Netlify**:
-   - Go to [netlify.com](https://netlify.com)
-   - Click "Add new site" → "Import an existing project"
-   - Connect your GitHub repository
-   - Configure build settings:
-     - **Branch**: `main`
-     - **Build command**: `npm run build`
-     - **Publish directory**: `client/dist`
-
-3. **Set Environment Variables**:
-   - Go to Site Settings → Environment Variables
-   - Add: `VITE_API_BASE_URL=https://your-backend-url.com`
-
-4. **Deploy**: Click "Deploy site"
-
-#### Option B: Manual Drag & Drop
-1. **Build locally**:
-   ```bash
-   npm run build
-   ```
-
-2. **Upload to Netlify**:
-   - Go to [netlify.com](https://netlify.com)
-   - Click "Add new site" → "Deploy manually"
-   - Drag the entire `client/dist` folder into the deployment area
-   - Click "Deploy site"
-
-### Step 3: Configure Environment
-Create a `.env` file in the client folder:
-```bash
-VITE_API_BASE_URL=https://your-backend-url.com
-```
-
----
-
-## 🔧 Environment Variables
-
-### Backend (.env)
-```bash
-MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net/
-OPENAI_API_KEY=sk-proj-your-openai-key
-IMGBB_API_KEY=your-imgbb-api-key
-```
-
-### Frontend (.env)
-```bash
-VITE_API_BASE_URL=https://your-backend-url.com
-```
-
----
-
 ## 🎯 API Endpoints
 
 ### Image Generation
@@ -209,27 +139,6 @@ Body: { "name": "artist", "prompt": "description", "photo": "imgbb-url" }
 
 ---
 
-## 🐛 Troubleshooting
-
-### Common Issues:
-
-**Gallery not loading:**
-- Check MongoDB connection
-- Verify backend URL in environment variables
-- Check browser console for CORS errors
-
-**Image generation failing:**
-- OpenAI API key might be invalid/expired
-- subnp.com might be temporarily down
-- Check network connectivity
-
-**Build failing on Netlify:**
-- Ensure Node.js version is set to 18
-- Check build command: `npm run build`
-- Verify publish directory: `client/dist`
-
----
-
 ## 📈 Performance & Optimization
 
 - **Lazy Loading**: Images load as you scroll
@@ -246,12 +155,6 @@ Body: { "name": "artist", "prompt": "description", "photo": "imgbb-url" }
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
