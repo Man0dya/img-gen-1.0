@@ -85,24 +85,24 @@ img-gen-1.0/
 
 ---
 
-## 🎯 API Endpoints (Netlify Functions)
+## 🎯 API Endpoints
 
 ### Generate Image
 ```
-POST /.netlify/functions/generate-image
+POST /api/v1/imgGen
 Body: { "prompt": "your image description" }
 Response: { "success": true, "photo": "imgbb-url", "description": "prompt" }
 ```
 
 ### Get Gallery
 ```
-GET /.netlify/functions/posts
+GET /api/v1/post
 Response: { "success": true, "data": [posts] }
 ```
 
 ### Share Image
 ```
-POST /.netlify/functions/posts
+POST /api/v1/post
 Body: { "name": "artist", "prompt": "description", "photo": "imgbb-url" }
 ```
 
@@ -165,3 +165,4 @@ Contributions are welcome!
 - **MongoDB Atlas** for database hosting
 
 ---
+

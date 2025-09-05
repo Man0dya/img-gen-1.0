@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { Loader, Card , FormField  } from '../components'
-import { getFunctionUrl } from '../utils'
+import { getApiBaseUrl } from '../utils'
 
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
@@ -23,7 +23,7 @@ const Home = () => {
       setLoading(true);
 
       try {
-        const response = await fetch(getFunctionUrl('posts'), {
+        const response = await fetch(`${getApiBaseUrl()}/api/v1/post`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

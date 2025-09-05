@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { preview } from '../assets'
-import { getRandomPrompt, getFunctionUrl } from '../utils'
+import { getRandomPrompt, getApiBaseUrl } from '../utils'
 import { FormField, Loader } from '../components'
 
 const CreatePost = () => {
@@ -20,7 +20,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true)
-        const response = await fetch(getFunctionUrl('generate-image'), {
+        const response = await fetch(`${getApiBaseUrl()}/api/v1/imgGen`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       try {
         setLoading(true)
-        const response = await fetch(getFunctionUrl('posts'), {
+        const response = await fetch(`${getApiBaseUrl()}/api/v1/post`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
