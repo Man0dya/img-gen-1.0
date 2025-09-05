@@ -20,7 +20,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true)
-        const response = await fetch(`${getApiBaseUrl()}/api/v1/imgGen`, {
+        const response = await fetch(`${getApiBaseUrl()}/.netlify/functions/generate-image`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       try {
         setLoading(true)
-        const response = await fetch(`${getApiBaseUrl()}/api/v1/post`, {
+        const response = await fetch(`${getApiBaseUrl()}/.netlify/functions/posts`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
