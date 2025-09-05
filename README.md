@@ -1,8 +1,8 @@
-# 🌞 FutureWatt AI Image Generator
+# AI Image Generator
 
-**Clean Energy. Smarter Living. AI-Powered Art Generation** 🍃🌍🎨
+** AI-Powered Art Generation** 🍃🌍🎨
 
-FutureWatt is a full-stack web application that revolutionizes AI image generation with dual-API fallback, permanent image hosting, and a beautiful community gallery.
+img-gen-1.0 is a full-stack web application that revolutionizes AI image generation with dual-API fallback, permanent image hosting, and a beautiful community gallery.
 
 ---
 
